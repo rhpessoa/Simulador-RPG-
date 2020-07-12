@@ -1,5 +1,5 @@
 # Simulador-RPG-
-Projeto RPG  da disciplina de Linguagem de programação do professor: Adriano Avelar utilizando JavaScript
+Projeto RPG  da disciplina de Linguagem de programação do professor: Adriano Avelar utilizando Java
 ## Versão do projeto 01
 ![Screenshot from 2019-05-22 17-35-42](https://user-images.githubusercontent.com/42783697/58207253-b8eedf80-7cb8-11e9-832c-5e9162f51076.png)
 ## Divisão do projeto
