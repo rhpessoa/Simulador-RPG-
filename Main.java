@@ -1,35 +1,77 @@
-class Main {
+
+import java.util.Scanner;
+public class Main {
+    public static void imprimir(Personagem p){
+        System.out.println(p.toString());
+        System.out.println("----------------------------");
+    }
+ 
   public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    Personagem p[] = new Personagem[6];
+    // PERSONAGEM MAGO
+    Personagem mago = new Mago(200, "Ariana", 650);
+    p[0] = mago;
+    //imprimir(mg);
 
-    Mago mg = new Mago(200, "Yuumi", 100);
-    System.out.println(mg.toString());
-    mg.takeDamage(10);
+    //System.out.println("-----------------------------");
+    // PERSONAGEM APRENDIZ
+    Personagem aprendiz = new Aprendiz(200, "Livro", 1000, "Yuumi");
+    p[1] = aprendiz;
+    //imprimir(nv);
 
-    System.out.println("-----------------------------");
+    //System.out.println("-----------------------------");
+    // PERSONAGEM FEITICEIRO
+    Personagem feiticeiro = new Feiticeiro(300, "Morgana", 1100, "Cura dos desesperados");
+    p[2] = feiticeiro;
+    //imprimir(wf);
 
-    Aprendiz nv = new Aprendiz(200, "Mestra", 100, "Yuumi");
-    System.out.println(nv.toString());
-    nv.takeDamage(10);
+    //System.out.println("-----------------------------");
+    // PERSONAGEM GUERREIRO
+    Personagem guerreiro = new Guerreiro(20, 2, "Ornn", 3500);
+    p[3] = guerreiro;
+    //imprimir(wr);
+    
+    //System.out.println("-----------------------------");
+    // PERSONAGEM ARQUEIRO
+    Personagem arqueiro = new Arqueiro(10, 4, "Luciano", 1200, "Chuva de flechas");
+    p[4] = arqueiro;
+    //imprimir(ea);
+    
+    //System.out.println("-----------------------------");
+    // PERSONAGEM SOLDADO 
+    Personagem soldado = new Soldado(25, 3, "Patheon", 2000, 150);
+    p[5] = soldado;
+    //imprimir(wb);    
+    
+    Batalha b1 = new Batalha();
 
-    System.out.println("-----------------------------");
+    //Menu
+    int op = 0;
+    int sn;
+    int oponente1, oponente2;
+    while(op >=0){
+      System.out.println("Vamos batalhar!");
+      System.out.println("Personagens:");
+      System.out.println("----------------------------");
+      for(int i = 0; i <=5; i++){
+        System.out.println("DIGITE "+(i+1)+" PARA ESCOLHER");
+        imprimir(p[i]);
+               
+      }
+      System.out.print("Escolha o oponente 1: ");
+      oponente1 = entrada.nextInt();
+      System.out.print("Escolha o oponente 2: ");
+      oponente2 = entrada.nextInt();
+      
+      b1.marcarBatalha(p[oponente1-1],p[oponente2-1]);
+      b1.apresentar();
+      b1.comecarBatalha(); 
 
-    Feiticeiro wf = new Feiticeiro(200, "Morgana", 100, "Fire");
-    System.out.println(wf.toString());
-    wf.takeDamage(10);
+      System.out.print("\nDeseja batalhar de novo? [(1) - Sim; (-1) - Não]: ");
+      op = entrada.nextInt();
+      
 
-    System.out.println("-----------------------------");
-
-    Guerreiro wr = new Guerreiro(20, 15, "Garen", 1000);
-    System.out.println(wr.toString());
-    wr.takeDamage(10);
-    System.out.println("-----------------------------");
-    Arqueiro ea = new Arqueiro(10, 20, "Varus", 135, "Chuva de flechas");
-    System.out.println(ea.toString());
-    ea.takeDamage(10);
-    System.out.println("-----------------------------");
-    Soldado wb = new Soldado(25, 20, "Patheon", 135, "Couraça de Boitatá");
-    System.out.println(wb.toString());
-    wb.takeDamage(10);
-  }
-
+    }  
+  }  
 }

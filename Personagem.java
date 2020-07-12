@@ -1,7 +1,12 @@
+
 public abstract class Personagem {
-  public abstract void takeDamage(int dano);
+    public abstract void recebeuDano(int dano);
+    
+    public abstract int atacar();
 
-  public abstract int getSaude();
+    public abstract int getSaude();
 
-  public abstract String getNome();
+    public abstract String getNome();
+    
 }
+    
